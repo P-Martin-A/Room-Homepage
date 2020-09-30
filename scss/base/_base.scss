@@ -1,0 +1,20 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    background-color: $white;
+    font-family: $font;
+    @include display(grid);
+
+    &.scroll{
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,5 @@
+#section-image-two{
+    background: center / 100% 100% no-repeat url('/images/image-about-light.jpg');
+    @include size(100%, 25rem);
+    @include gridArea(section-image-two);
+}

@@ -1,0 +1,136 @@
+#header{
+    @include gridArea(header);
+    @include position(relative);
+    @include size(100%, 45rem);
+    @include tablet() {
+        padding: 4rem;
+    };
+
+    .image{
+        @include size(100%, 100%);
+        @include position(absolute) {
+            top: 0;
+            left: 0;
+        };
+    }
+
+    .navigation{
+        @include position(relative) {
+            top: 5rem;
+        };
+        @include display(flex, center, center);
+        @include desktops-l() {
+            top: 0;
+            @include display(flex, center, left) {
+                flex-direction: row-reverse;
+            };
+        }
+
+        .icon{
+            cursor: pointer;
+            @include position(absolute) {
+                left: 2rem;
+                z-index: $tall;
+            };
+            @include desktops-l() {
+                @include display(none)
+            };
+        }
+    
+        .list{
+            z-index: $medium;
+            @include display(none);
+            @include desktops-l() {
+                @include display(flex, center, center);
+            }
+
+            &.active{
+                background-color: $white;
+                @include size(100%, 12rem);
+                @include display(flex, center, center);
+                @include position(absolute) {
+                    top: 0;
+                    left: 0;
+                };
+
+                &::after{
+                    content: '';
+                    z-index: $tall;
+                    opacity: .5;
+                    background-color: $black;
+                    @include size(100%, 100vh);
+                    @include position(absolute) {
+                        top: 12rem;
+                        left: 0;
+                    };
+                }
+            }
+
+            .item{
+                list-style: none;
+                margin: 0 1.5rem;
+                @include desktops-l() {
+                    margin: 0 1rem;
+                }
+
+                .link{
+                    color: $black;
+                    font-weight: 700;
+                    text-transform: lowercase;
+                    font-size: 1.5rem;
+                    @include desktops-l() {
+                        color: $white;
+                        font-size: 1.2rem;
+                        @include position(relative);
+                        @include display(flex, center, center);
+                    }
+                    
+                    &::after{
+                        @include desktops-l() {
+                            transition: width .2s ease-in-out;
+                            content: '';
+                            @include size(0, .2rem);
+                            @include display(inline-block);
+                            @include position(absolute) {
+                                background-color: $white;
+                                bottom: -.5rem;
+                            };
+                        };
+                        
+                    }
+                    
+                    &:hover::after{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    
+        .title{
+            @include desktops-l() {
+                margin-right: 2rem;
+            }
+        }
+    }
+
+    .angles{
+        @include display(flex, center, center);
+        @include position(absolute) {
+            bottom: 0;
+            right: 0;
+        };
+        @include desktops-l() {
+            transform: translateX(100%);
+        };
+
+        .angle{
+            cursor: pointer;
+            background-color: $black;
+            padding: 2rem 2.5rem;
+
+            &:hover{
+                background-color: $very-dark-gray;
+            }
+        }
+    }
+}

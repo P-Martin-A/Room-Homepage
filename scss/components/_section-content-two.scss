@@ -1,0 +1,24 @@
+#section-content-two{
+    padding: 6rem 4rem;
+    @include gridArea(section-content-two);
+    @include size(100%, 25rem);
+
+    .title{
+        font-size: 1.2rem;
+        font-weight: 600;
+        letter-spacing: .5rem;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+    }
+
+    .text{
+        font-size: 1rem;
+        line-height: 1.5;
+        color: $dark-gray;
+        margin-bottom: 5rem;
+        @include tablet() {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+    }
+}
