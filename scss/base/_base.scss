@@ -12,6 +12,7 @@ html{
 body{
     background-color: $white;
     font-family: $font;
+    scroll-behavior: smooth;
     @include display(grid);
 
     &.scroll{
