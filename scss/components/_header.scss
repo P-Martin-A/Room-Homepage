@@ -21,7 +21,7 @@
         @include display(flex, center, center);
         @include desktops-l() {
             top: 0;
-            @include display(flex, center, left) {
+            @include display(flex, center, flex-end) {
                 flex-direction: row-reverse;
             };
         }
