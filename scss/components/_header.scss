@@ -57,7 +57,7 @@
                     z-index: $tall;
                     opacity: .5;
                     background-color: $black;
-                    @include size(100%, 100vh);
+                    @include size(100%, 60rem);
                     @include position(absolute) {
                         top: 12rem;
                         left: 0;
