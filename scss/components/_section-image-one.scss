@@ -1,5 +1,5 @@
 #section-image-one{
-    background: center / 100% 100% no-repeat url('/images/image-about-dark.jpg');
+    background: center / 100% 100% no-repeat url('./images/image-about-dark.jpg');
     @include size(100%, 25rem);
     @include gridArea(section-image-one);
 }
